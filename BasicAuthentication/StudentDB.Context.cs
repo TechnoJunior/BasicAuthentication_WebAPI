@@ -13,10 +13,10 @@ namespace BasicAuthentication
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentsDBEntities : DbContext
+    public partial class StudentDBEntities : DbContext
     {
-        public StudentsDBEntities()
-            : base("name=StudentsDBEntities")
+        public StudentDBEntities()
+            : base("name=StudentDBEntities")
         {
         }
     

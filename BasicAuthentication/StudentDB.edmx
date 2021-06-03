@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="StudentsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="StudentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Students">
           <Key>
             <PropertyRef Name="S_Id" />
@@ -22,20 +22,18 @@
           <Property Name="T_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="T_Pass" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="StudentsDBModelStoreContainer">
+        <EntityContainer Name="StudentDBModelStoreContainer">
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="StudentsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="StudentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="S_Id" />
-            <PropertyRef Name="S_Name" />
-            <PropertyRef Name="S_Gender" />
-            <PropertyRef Name="S_Class" />
           </Key>
           <Property Name="S_Id" Type="Int32" Nullable="false" />
           <Property Name="S_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -45,14 +43,12 @@
         <EntityType Name="Teacher">
           <Key>
             <PropertyRef Name="T_Id" />
-            <PropertyRef Name="T_Name" />
-            <PropertyRef Name="T_Pass" />
           </Key>
           <Property Name="T_Id" Type="Int32" Nullable="false" />
           <Property Name="T_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="T_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="StudentsDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="StudentDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
         </EntityContainer>
@@ -61,9 +57,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StudentsDBModelStoreContainer" CdmEntityContainer="StudentsDBEntities">
+        <EntityContainerMapping StorageEntityContainer="StudentDBModelStoreContainer" CdmEntityContainer="StudentDBEntities">
           <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="StudentsDBModel.Student">
+            <EntityTypeMapping TypeName="StudentDBModel.Student">
               <MappingFragment StoreEntitySet="Students">
                 <ScalarProperty Name="S_Id" ColumnName="S_Id" />
                 <ScalarProperty Name="S_Name" ColumnName="S_Name" />
@@ -73,7 +69,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="StudentsDBModel.Teacher">
+            <EntityTypeMapping TypeName="StudentDBModel.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
                 <ScalarProperty Name="T_Id" ColumnName="T_Id" />
                 <ScalarProperty Name="T_Name" ColumnName="T_Name" />

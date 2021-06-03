@@ -13,7 +13,7 @@ namespace BasicAuthentication.Controllers
         {
             using(StudentsDBEntities student = new StudentsDBEntities())
             {
-                return Ok(student.Students.ToList());
+                return Ok(student.Teachers.ToList());
             }
         }
     }
