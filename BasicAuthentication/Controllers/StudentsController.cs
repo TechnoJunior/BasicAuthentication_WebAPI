@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicAuthentication.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,9 +12,9 @@ namespace BasicAuthentication.Controllers
     {
         public IHttpActionResult Get()
         {
-            using(StudentsDBEntities student = new StudentsDBEntities())
+            using(StudentDBEntities student = new StudentDBEntities())
             {
-                return Ok(student.Teachers.ToList());
+                return Ok(student.Students.ToList());
             }
         }
     }

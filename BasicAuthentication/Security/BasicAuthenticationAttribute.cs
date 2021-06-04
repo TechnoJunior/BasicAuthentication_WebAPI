@@ -28,6 +28,8 @@ namespace BasicAuthentication.Security
                 String[] authInfoArray = decodeAuthoInfo.Split(':');
                 String username = authInfoArray[0];
                 String password = authInfoArray[1];
+                Console.Write("Username : " + username);
+                Console.Write("Password : " + password);
 
                 if (UserValidate.login(username, password))
                 {

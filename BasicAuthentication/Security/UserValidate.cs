@@ -9,7 +9,7 @@ namespace BasicAuthentication.Security
     {
         public static bool login(String username, String password)
         {
-            using(StudentsDBEntities teacher = new StudentsDBEntities())
+            using(StudentDBEntities teacher = new StudentDBEntities())
             {
                 return teacher.Teachers.Any(user => user.T_Name.Equals(username, StringComparison.OrdinalIgnoreCase) && user.T_Pass == password);
             }
